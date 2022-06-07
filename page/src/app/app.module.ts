@@ -18,7 +18,6 @@ import { ProductBookingComponent } from './product-booking/product-booking.compo
 import { BarComponent } from './bar/bar.component';
 import { CafeComponent } from './cafe/cafe.component';
 import { CloudKitchenComponent } from './cloud-kitchen/cloud-kitchen.component';
-import { EnterpriseComponent } from './enterprise/enterprise.component';
 import { DineInComponent } from './dine-in/dine-in.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardfrontComponent } from './dashboardfront/dashboardfront.component';
@@ -26,7 +25,6 @@ import {HttpCallInterceptor} from './interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
-import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 const routes: Routes = [
   
@@ -65,11 +63,9 @@ const routes: Routes = [
     BarComponent,
     CafeComponent,
     CloudKitchenComponent,
-    EnterpriseComponent,
     DineInComponent,
     DashboardComponent,
     DashboardfrontComponent,
-    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,

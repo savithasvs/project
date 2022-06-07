@@ -23,7 +23,7 @@ export class ClientLoginComponent implements OnInit {
     });
    }
   ngOnInit(): void {
-    console.log("client-login")
+    console.log("client-login");
   }
   get email() {
     return this.clientFormGroup.get('email')!;

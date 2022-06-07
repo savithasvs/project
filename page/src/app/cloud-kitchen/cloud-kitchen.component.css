@@ -69,6 +69,6 @@
 span{
     font-size: 15px;
     background: -webkit-linear-gradient(rgb(29, 60, 128), rgb(148, 38, 102));
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
