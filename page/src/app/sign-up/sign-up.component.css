@@ -1,0 +1,81 @@
+ 
+ .container{
+    background-image:linear-gradient(to right top,rgb(34, 177, 129), rgb(51, 74, 177));
+    /* height: 91.5vh; */
+    /* margin-left:600px;
+    margin-right: 500px; */
+    /* padding: 50px; */
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    /* margin-top: -20px; */
+    height: 650px;
+    width: 600px;
+
+  }
+  .panel-body{
+    /* background-color: rgb(172, 44, 129); */
+    /* margin-left: 25%; */
+    padding: 50px;
+    margin-top: 5%;
+  }
+  .form-control {
+    /* background: rgb(34, 177, 129); */
+    background: linear-gradient(
+      90deg,
+      rgb(51, 74, 177)
+      rgb(34, 177, 129),
+    );
+    border: none;
+    width: 450px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .field,
+  .buttons
+  {
+      margin-top: 1rem;
+      color: black;
+  }
+  
+  form {
+      width: 400px;
+  }
+ /* .panel-body{
+    margin-top:80px;
+    margin-left:330px;
+    width: 420px;
+    height: 350px;
+    box-shadow: 2px;
+    margin-right: 500px;
+    background-color:darkturquoise;
+} 
+
+.panel-heading{
+    background-color:cornflowerblue;
+}
+button{
+    margin-left: 330px;
+    width:420px;
+    border-radius: 50px;
+    color: black;
+    background-color: brown; */
+    /* background-image: linear-gradient(-45deg,darkblue,rgb(226, 93, 115));
+} */
+/* .container{
+    background-image: linear-gradient(-45deg,rgb(157, 224, 247),darkblue,rgb(226, 93, 115));
+} */
+/* } */
+/* .foot{
+    margin: auto;
+    width: 20%;
+    /* border: 1px solid green;
+    padding: 3px; */
+/* }
+.butt{
+    margin: auto;
+    width: 20%;
+} */ 
+.page-footer{
+    margin-top: -82px;
+}

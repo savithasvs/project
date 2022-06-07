@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="panel-body">
+        <form [formGroup]="SignFormGroup" (ngSubmit)="FormSubmit(this.SignFormGroup.value)">
+            <div>
+                <label for="firstName">First Name:</label>
+                <input id="firstName" class="form-control" formControlName="firstName" placeholder="Enter Your First Name"
+                    required />
+                    <span
+                    class="text-danger"
+                    *ngIf="
+                    SignFormGroup.controls['firstName'].touched &&
+                    SignFormGroup.hasError('required', 'firstName')
+                    "
+                    >*First Name is required!!</span>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input id="lastName" class="form-control" formControlName="lastName" placeholder="Enter Your Last Name "
+                    required />
+                    <span
+                    class="text-danger"
+                    *ngIf="
+                    SignFormGroup.controls['lastName'].touched &&
+                    SignFormGroup.hasError('required', 'lastName')
+                    "
+                    >*Last Name is required!!</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input id="email" class="form-control" formControlName="email" (change)="emailvalidation($event)"
+                    placeholder=" Enter Your Email" />
+                    <span
+                    class="text-danger"
+                    *ngIf="
+                    SignFormGroup.controls['email'].touched &&
+                    SignFormGroup.hasError('required', 'email')
+                    "
+                    >*Email is required!!</span>
+            </div>
+            <div class="form-group">
+                <label for="Password">Password:</label>
+                <input id="Password" class="form-control" type="password" formControlName="Password"
+                    placeholder="Enter Your Password" />
+                    <span
+                    class="text-danger"
+                    *ngIf="
+                    SignFormGroup.controls['Password'].touched &&
+                    SignFormGroup.hasError('required', 'Password')
+                    "
+                    >*Password is required!!</span>
+            </div>
+
+            <div class="form-group">
+                <label for="reenter">Confirm Password:</label>
+                <input id="reenter" class="form-control" type="password" formControlName="reenter"
+                    placeholder="Enter Your Password" />
+                    <span
+                    class="text-danger"
+                    *ngIf="
+                    SignFormGroup.controls['reenter'].touched &&
+                    SignFormGroup.hasError('required', 'reenter')
+                    "
+                    >*Confirm Password is required!!</span>
+            </div>
+            <button class="btn btn-primary" type="submit">submit</button>
+
+        </form>
+    </div>
+    <footer class="page-footer font-small blue">
+        <div class="footer-copyright text-center py-3"> Copyright © Restaurant 2020
+            <div class="text-danger">
+                <div class="foot">
+                    Already have an account?
+                    <button class="butt btn-primary" (click)="click()">Login</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

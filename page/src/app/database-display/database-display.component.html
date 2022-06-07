@@ -1,0 +1,39 @@
+
+<button class="btn1 btn-dark" (click)="getadmin()">Get Data</button>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Aadhar</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Mobile Number</th>
+                <th>Guest Count</th>
+                <th>Room Type</th>
+                <th>Room Number</th>
+                <th>Price</th>
+                <th>Function</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of object">
+                <td>{{ obj.Name }}</td>
+                <td>{{ obj.aadhar }}</td>
+                <td>{{ obj.email }}</td>
+                <td>{{ obj.address }}</td>
+                <td>{{ obj.MobileNumber }}</td>
+                <td>{{ obj.GuestCount }}</td>
+                <td>{{ obj.roomtype }}</td>
+                <td>{{ obj.roomnumber}}</td>
+                <td>{{ obj.Price }}</td>
+                <td scope="row">
+                    <button class="btn btn-dark" (click)="deluser(obj, obj)">
+                      Delete
+                    </button>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

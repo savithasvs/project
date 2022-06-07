@@ -1,0 +1,39 @@
+.page:hover{
+    display: inline;
+    font-weight: bolder;
+     padding-left: 35px;
+    padding-right: 35px; 
+    background-color:rgb(247, 243, 245);
+    box-sizing: border-box;
+    border-radius: 25px;
+    /* list-style-type: none; */
+} 
+.page{
+    padding-left: 60px;
+}
+a{
+    color:black;
+    text-decoration-line: none;
+    font-weight: 700;
+    font-size: large;
+}
+
+div{
+    display: inline;
+    margin-right: 20px;
+     color: red;
+    /* list-style-type: none; */
+    /* background-image: linear-gradient(pink,lightseagreen); */
+}
+/* .restaurantgif{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 65%;
+        height: 50%;
+} */
+.navbar navbar-dark fixed-top bg-dark {
+    width: 10px;
+    height: 50px;
+    padding: 80px;
+}

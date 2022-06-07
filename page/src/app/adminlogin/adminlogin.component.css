@@ -1,0 +1,35 @@
+body{
+    background-image:linear-gradient(to right top,rgb(172, 44, 129), rgb(156, 40, 40));
+    height: 91.5vh;
+    margin-left: 0px;
+    margin-right: 10px;
+    width: 100vw;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+  }
+  .container mt-5{
+    background-color: antiquewhite;
+  }
+  .card,
+  .card-1 {
+    background: rgb(151, 34, 89);
+    background: linear-gradient(
+      90deg,
+      rgb(155, 39, 106),
+      rgb(146, 43, 43)
+    );
+    border: none;
+    width: 450px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .field,
+  .buttons
+  {
+      margin-top: 1rem;
+  }
+  
+  form {
+      width: 400px;
+  }

@@ -1,0 +1,102 @@
+<div class="bg-img">
+    <div class="container">
+        <div class="panel-body">
+            <form [formGroup]="restaurantbookingFormGroup">
+                <div class="panel-heading"></div>
+                <div class="form-group">
+                    <label for="fname"> Name:</label>
+                    <input id="fname" type="text" class="form-control" formControlName="fname" placeholder="Name Required"
+                        required />
+                    <span class="text-danger" *ngIf="
+                        restaurantbookingFormGroup.controls['fname'].touched &&
+                        restaurantbookingFormGroup.hasError('required', 'fname')
+                        ">*First Name is required!!</span>
+                </div>
+                <div class="form-group">
+                    <label for="aadhar">Aadhar:</label>
+                    <input id="aadhar" type="text" class="form-control" formControlName="aadhar" placeholder="Aadhar"
+                        required />
+                    <span class="text-danger" *ngIf="
+                        restaurantbookingFormGroup.controls['aadhar'].touched &&
+                        restaurantbookingFormGroup.hasError('required', 'aadhar')
+                        ">*aadhar is required!!</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="email" class="form-control" type="email" formControlName="email"
+                        placeholder=" Email(required)" />
+                    <span class="text-danger" *ngIf="
+                        restaurantbookingFormGroup.controls['email'].touched &&
+                        restaurantbookingFormGroup.hasError('required', 'email')
+                        ">*Email is required!!</span>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input id="address" class="form-control" type="address" formControlName="address"
+                        placeholder=" Address(required)" />
+                    <span class="text-danger" *ngIf="
+                        restaurantbookingFormGroup.controls['address'].touched &&
+                        restaurantbookingFormGroup.hasError('required', 'aadress')
+                        ">*address is required!!</span>
+                </div>
+                <div class="form-group">
+                    <label for="Mobile Number">Mobile Number:</label>
+                    <input id="MobileNumber" type="number" class="form-control" formControlName="MobileNumber"
+                        placeholder=" Mobile Number (required)" />
+                    <span class="text-danger" *ngIf="
+                        restaurantbookingFormGroup.controls['MobileNumber'].touched &&
+                        restaurantbookingFormGroup.hasError('required', 'MobileNumber')
+                        ">*Mobile Number is required!!</span>
+                </div>
+                <div class="form-group">
+                    <label for="GuestCount">Number of Guest:</label>
+                    <input id="GuestCount" type="number" class="form-control" formControlName="GuestCount"
+                        placeholder="GuestCount" required />
+                    <span class="text-danger" *ngIf="
+                        restaurantbookingFormGroup.controls['GuestCount'].touched &&
+                        restaurantbookingFormGroup.hasError('required', 'GuestCount')
+                        ">*GuestCount is required!!</span>
+                </div>
+                <div class="form-group">
+                    <label for="roomtype">Room Type:</label><br>
+                    <select input id="roomtype" name="roomtype" type="text" (change)="getvalue($event)"
+                        class="form-control" formControlName="roomtype">
+                        <option value="select the roomtype">select the roomtype</option>
+                        <option value="Bar">Bar</option>
+                        <option value="Cafe">Cafe</option>
+                        <option value="Cloud Kitchen">Cloud Kitchen</option>
+                        <option value="Enterprise">Enterprise</option>
+                        <option value="Dine-in">Dine-in</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="roomnumber">Room Number:</label>
+
+                    <select formControlName="roomnumber" class="form-control" (change)="roomvalue($event)">
+                        <option disabled>Select from list</option>
+                        <option>Choose number</option>
+                        <option *ngFor="let web of websiteList">{{web}}</option>
+                    </select>
+
+                    <span class="text-danger" *ngIf="
+                    restaurantbookingFormGroup.controls['roomnumber'].touched &&
+                    restaurantbookingFormGroup.hasError('required', 'roomnumber')
+                    ">*Room Number is required!!</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="Price">Price:</label>
+                    <input id="Price" class="form-control" formControlName="Price" placeholder="Price (required)" />
+                    <span class="text-danger" *ngIf="
+                    restaurantbookingFormGroup.controls['Price'].touched &&
+                    restaurantbookingFormGroup.hasError('required', 'Price')
+                    ">*Price is required!!</span>
+                </div>
+                <br>
+                <div>
+                    <button class="btn" id="butt" type="submit"
+                        (click)="FormSubmit(this.restaurantbookingFormGroup.value)">submit</button>
+                </div>
+            </form>
+        </div>
+    </div>

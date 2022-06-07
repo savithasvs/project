@@ -1,0 +1,93 @@
+.background {
+    background-color: black;
+    display: flex;
+    margin-top: 30px;
+  }
+  .icon{
+    margin-top: 50px;
+  }
+  img{
+      border-radius: 100px;
+  }
+  .cards {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    padding: 50px;
+    background-color: black;
+  }
+  .card1,
+  .card2,
+  .card3 {
+    /* padding: 10px 50px; */
+    border: 5px solid white;
+    margin-right: 30px;
+    transition: transform 0.2s ease;
+    border-radius: 10px;
+  }
+  .cards a {
+    background-color: #008cf5;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    width: 250px;
+    height: 40px;
+    border-radius: 15px;
+    text-align: center;
+  }
+  .card1 a,
+  .card2 a {
+    padding: 7px;
+    margin-top: 60px;
+    margin-left: 70px;
+  }
+  .card3 a{
+    padding: 7px;
+    margin-top: 60px;
+    margin-left: 20px;
+  }
+  .card2 a {
+    margin-left: 20px;
+  }
+  .cards a:hover {
+    background-color: white;
+    color: #008cf5;
+  }
+  .card1:hover,
+  .card2:hover,
+  .card3:hover {
+    transform: scale(1.1);
+  }
+  span {
+    margin-left: 900px;
+    margin-top: 20px;
+    background-color: #008cf5;
+    color: white;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .left-col {
+    background-color: #008cf5;
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    padding: 40px;
+  }
+  .left-col a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+    transition: transform 0.2s ease;
+  }
+  .left-col a:hover,
+  .left-col img:hover {
+    color: black;
+    transform: scale(1.1);
+  }
+  .left-col img {
+    padding: 10px;
+    width: 60px;
+  }

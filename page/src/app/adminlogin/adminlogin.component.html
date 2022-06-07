@@ -1,0 +1,61 @@
+<body>
+    <div class="container mt-5">
+      <div class="card mx-auto">
+        <div class="card-header">
+          <h1 class="text-center text-light">Admin Login</h1>
+        </div>
+        <div class="card-body mx-auto">
+          <form
+            class="myform"
+            [formGroup]="adminform"
+            (ngSubmit)="alogin(this.adminform.value)"
+          >
+            <div class="field">
+              <label for="adminname" class="text-light">Username :</label>
+              <input
+                type="text"
+                formControlName="username"
+                class="form-control"
+                id="adminname"
+                placeholder="Enter your username"
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  adminform.controls['username'].touched &&
+                  adminform.hasError('required', 'username')
+                "
+                >* Name is required!!</span>
+            </div>
+  
+            <div class="field">
+              <label for="password" class="text-light">Password :</label>
+              <input
+                type="password"
+                formControlName="password"
+                id="password"
+                placeholder="Enter your Password"
+                class="form-control"
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  adminform.controls['password'].dirty &&
+                  adminform.hasError('required', 'password')
+                "
+              >
+                *Password is required!!</span
+              >
+            </div>
+  
+            <div class="buttons text-center">
+              <button id="btn" type="submit" class="btn btn-dark">Login</button>
+            </div>
+            <div class="text-center text-success" *ngIf="successMessage">
+              {{ successMessage }}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
