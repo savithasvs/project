@@ -23,6 +23,7 @@ export class ClientLoginComponent implements OnInit {
     });
    }
   ngOnInit(): void {
+    console.log("client-login")
   }
   get email() {
     return this.clientFormGroup.get('email')!;
@@ -35,10 +36,10 @@ export class ClientLoginComponent implements OnInit {
 { 
   this.api.Client(search.email).subscribe((data)=>{
       console.log("data returned from server",data);
-      var totlen = data.docs.length
+      let totlen = data.docs.length
      console.log(data.docs[0].email);
       this.array.push(data.docs);
-      for(var i=0; i<=totlen; i++)
+      for(let i=0; i<=totlen; i++)
       {
         this.array.push(data.docs[0]);
         console.log("fetch from database",this.array);

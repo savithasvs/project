@@ -1,14 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule} from '@angular/router';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientLoginComponent } from './client-login/client-login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { DiscoveryComponent } from './discovery/discovery.component';
 import { RestaurantTypesComponent } from './restaurant-types/restaurant-types.component';
@@ -28,6 +26,7 @@ import {HttpCallInterceptor} from './interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 const routes: Routes = [
   
@@ -70,6 +69,7 @@ const routes: Routes = [
     DineInComponent,
     DashboardComponent,
     DashboardfrontComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,

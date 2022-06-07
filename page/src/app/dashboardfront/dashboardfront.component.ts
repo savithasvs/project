@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardfrontComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
+    console.log("dashboardfront");
   }
 
 }

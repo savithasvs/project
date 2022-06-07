@@ -1,0 +1,31 @@
+<div class="panel-body">
+    <form [formGroup]="clientFormGroup"> 
+        <div class="form-group" [class.has-error]="firstName.invalid && firstName.touched">
+            <label for="firstName">First Name:</label>
+            <input id="firstName" class="form-control" formControlName="firstName" placeholder="FirstName Required" required />
+            <div class="help-block text-dark" *ngIf="firstName.touched">
+                <span *ngIf="firstName.errors?.required">
+                    First Name is Required
+                </span>
+                <span *ngIf="firstName.errors?.minlength">
+                    First Name MUST be Minimum 3 Chars!!!!
+                </span>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input id="password" class="form-control" formControlname="password" placeholder="Enter the password">
+            <div class="help-block text-dark">
+                <span *ngIf="password.errors?.required"> Password is REQUIRED!</span>
+                <span *ngIf="password.invalid">
+                    Enter a correct password
+                </span>
+            </div>
+        </div>
+        <div>
+<br>
+            <button class="btn btn-primary" [disabled]="!clientFormGroup.valid">Submit</button>
+            
+     </div> 
+     </form>

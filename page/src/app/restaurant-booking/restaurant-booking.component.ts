@@ -126,8 +126,10 @@ FormSubmit(FormValue:NgForm)
       // window.location.reload();
       console.log("Form value add sucessfully");
       console.log("getted response",res);
-      if(res['name'] === 'Error'){  
+      if (res && res['name'] && res['name'] !== "Error"){
+      // if(res['name'] === 'Error'){  
       this.toastr.error(res['message']) 
+      this.toastr.success("Booking Successfull");
       }
     },err=>{
       this.toastr.error("Please Register your form");
@@ -158,7 +160,8 @@ roomvalue(event:any) {
     this.findroom.push(res.docs);
     console.log(this.findroom);
     if(res.docs.length >0 ){
-      alert("Not able to choose this room already bookd");
+      // alert("Not able to choose this room already bookd");
+      this.toastr.success("Not able to choose this room already bookd");
     }
   
           

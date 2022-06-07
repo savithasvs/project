@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
   providedIn: 'root'
 })
 export class AppServiceService {
-  restaurantbookingFormGroup(FormValue: NgForm) {
+  restaurantbookingFormGroup() {
     throw new Error('Method not implemented.');
   }
 

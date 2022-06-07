@@ -14,6 +14,7 @@ export class DineInComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log("dine-in");
   }
 
 }

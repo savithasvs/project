@@ -13,6 +13,7 @@ export class CloudKitchenComponent implements OnInit {
     this.router.navigate(['restaurant-booking']);
     }
   ngOnInit(): void {
+    console.log("Cloud-Kitchen")
   }
 
 }

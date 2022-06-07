@@ -21,7 +21,7 @@ export class AdminloginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+   console.log("admin")
   }
 
   alogin(FormValue: any) {

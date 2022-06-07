@@ -5,7 +5,6 @@
 #topic{
     margin-top: 10px;
     font-style: normal;
-    margin: auto;
     width: 50%;
 }
 /* span{
@@ -75,7 +74,6 @@ input {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  border: none;
   appearance: none;
 }
 /* .butt{

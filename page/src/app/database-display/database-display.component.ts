@@ -40,6 +40,7 @@ export class DatabaseDisplayComponent  {
 //   }
   
   ngOnInit(): void {
+    console.log("database");
   }
   getadmin(){
     this.api.getadmin().subscribe(data=>{
@@ -63,7 +64,6 @@ export class DatabaseDisplayComponent  {
 }
 deluser(data: any, data1: any) {
   this.api.remove(data._id, data1._rev).subscribe((res) => {
-    // alert('Your Data has been deleted from the database.');
     this.toastr.success("Your Data has been deleted from the database.");
     location.reload();
   });
