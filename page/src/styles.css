@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import url(../node_modules/bootstrap/dist/css/bootstrap.css);  
- .page:hover{
+@import url(../node_modules/bootstrap/dist/css/bootstrap.css); 
+@import '~ngx-toastr/toastr'; 
+ /*.page:hover{
     display: inline;
     font-weight: bolder;
     padding-left: 35px;
@@ -8,9 +9,9 @@
     background-color:white;
     box-sizing: border-box;
     border-radius: 25px;
-    /* list-style-type: none; */
-} 
-a{
+     list-style-type: none; 
+}*/ 
+/*a{
     color:aquamarine;
     text-decoration-line: none;
 }
@@ -19,9 +20,9 @@ div{
     display: inline;
     margin-right: 20px;
     color: red;
-    /* list-style-type: none; */
-    /* background-image: linear-gradient(pink,lightseagreen); */
-}
+     list-style-type: none;
+     background-image: linear-gradient(pink,lightseagreen); 
+}*/
 /* nav{
     background-color: rgb(43, 255, 0);
 } */

@@ -91,7 +91,7 @@ export class SignUpComponent  {
       if (res)
       {
         this.toastr.success("Signup Successfull");
-        this.router.navigate(['/client-login'])
+        this.router.navigate([''])
       }
     })
   }
