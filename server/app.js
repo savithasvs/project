@@ -4,7 +4,7 @@ const bodyparser = require("body-parser");
 const app = connection();
 app.use(express.static("public"));
 const port = 8000;
-var login = {};
+let login = {};
 const file = require("fs");
 const { request } = require("http");
 const { response } = require("express");

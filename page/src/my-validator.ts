@@ -9,7 +9,6 @@ export function rangeValidator(min: any,max:any){
 }
 export function PasswordMatchValidator(c:AbstractControl): {[key:string]: boolean} | null {
     let emailControlvalue = c.get('Password')?.value;
-    // console.log(emailControlvalue);
     let confirmEmailControlValue = c.get('ConfirmPassword')?.value;
     if (emailControlvalue !== confirmEmailControlValue ){
 

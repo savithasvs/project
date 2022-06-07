@@ -56,13 +56,13 @@ export class SignUpComponent  {
   { 
     this.AppService.Client(search.email).subscribe((data:any)=>{
         console.log("data returned from server",data);
-        var totlen = data.docs.length;
+        let totlen = data.docs.length;
        console.log(data.docs[0].email);
         this.array.push(data.docs);
-        for(var i=0; i<=totlen; i++)
+        for(let i=0; i<=totlen; i++)
         {
           console.log(data.docs[i].email);
-          var checkmail = data.doc[i].email;
+          let checkmail = data.doc[i].email;
           // if(data.docs.email == search.email )
           if(checkmail == search.email){
             this.toastr.success("Data verified");

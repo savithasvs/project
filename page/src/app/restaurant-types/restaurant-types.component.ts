@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantTypesComponent implements OnInit {
 
-  constructor() { }
 
   ngOnInit(): void {
+    console.log("rest-type")
   }
 
 }

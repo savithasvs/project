@@ -139,11 +139,11 @@ FormSubmit(FormValue:NgForm)
   }
   getvalue(event:any) {
   console.log("value change",event.target.value)
-  var arr = event.target.value;
+  let arr = event.target.value;
   this.api.getvalue("3d3a0153d795fa6b6ace65b522bc90ad").subscribe((res:any)=>{
     console.log("value getted",res)
-    var i=0;
-    for(var value in res){
+    let i=0;
+    for(let value in res){
   if(arr == value){
     this.restaurantbookingFormGroup.controls['Price'].setValue(res[value]);
         console.log(res[value])
