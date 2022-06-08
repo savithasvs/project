@@ -5,26 +5,32 @@
                 <div class="panel-heading"></div>
                 <div class="form-group">
                     <label for="fname"> Name:</label>
-                    <input id="fname" type="text" class="form-control" formControlName="fname" placeholder="Name Required"
+                    <input id="fname" type="text" class="form-control" formControlName="fname" placeholder="Enter Your First Name" 
                         required />
                     <span class="text-danger" *ngIf="
                         restaurantbookingFormGroup.controls['fname'].touched &&
                         restaurantbookingFormGroup.hasError('required', 'fname')
                         ">*First Name is required!!</span>
+                        <span class="text-danger" *ngIf="
+                        restaurantbookingFormGroup.hasError('pattern','fname')
+                        ">First Name Must Contain Only alphabets</span>
                 </div>
                 <div class="form-group">
                     <label for="aadhar">Aadhar:</label>
-                    <input id="aadhar" type="text" class="form-control" formControlName="aadhar" placeholder="Aadhar"
-                        required />
+                    <input id="aadhar" type="text" class="form-control" formControlName="aadhar" placeholder="Enter Your Aadhar Number"  required />
                     <span class="text-danger" *ngIf="
                         restaurantbookingFormGroup.controls['aadhar'].touched &&
                         restaurantbookingFormGroup.hasError('required', 'aadhar')
                         ">*aadhar is required!!</span>
+                        <span class="text-danger" *ngIf="
+                        restaurantbookingFormGroup.controls['aadhar'].touched &&
+                        restaurantbookingFormGroup.hasError('pattern', 'aadhar')
+                        ">Aadhar Number should have 12 digit</span>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input id="email" class="form-control" type="email" formControlName="email"
-                        placeholder=" Email(required)" />
+                        placeholder="Enter Your Email" />
                     <span class="text-danger" *ngIf="
                         restaurantbookingFormGroup.controls['email'].touched &&
                         restaurantbookingFormGroup.hasError('required', 'email')
@@ -33,7 +39,7 @@
                 <div class="form-group">
                     <label for="address">Address:</label>
                     <input id="address" class="form-control" type="address" formControlName="address"
-                        placeholder=" Address(required)" />
+                        placeholder="Enter Your Address" />
                     <span class="text-danger" *ngIf="
                         restaurantbookingFormGroup.controls['address'].touched &&
                         restaurantbookingFormGroup.hasError('required', 'aadress')
@@ -41,17 +47,21 @@
                 </div>
                 <div class="form-group">
                     <label for="Mobile Number">Mobile Number:</label>
-                    <input id="MobileNumber" type="number" class="form-control" formControlName="MobileNumber"
-                        placeholder=" Mobile Number (required)" />
+                    <input id="MobileNumber" type="text" class="form-control" formControlName="MobileNumber"
+                        placeholder="Enter Your Mobile Number" />
                     <span class="text-danger" *ngIf="
                         restaurantbookingFormGroup.controls['MobileNumber'].touched &&
                         restaurantbookingFormGroup.hasError('required', 'MobileNumber')
                         ">*Mobile Number is required!!</span>
+                        <span class="text-danger" *ngIf="
+                        restaurantbookingFormGroup.controls['MobileNumber'].touched &&
+                        restaurantbookingFormGroup.hasError('pattern', 'MobileNumber')
+                        ">Please Enter a 10 digit Mobile Number.</span>
                 </div>
                 <div class="form-group">
                     <label for="GuestCount">Number of Guest:</label>
-                    <input id="GuestCount" type="number" class="form-control" formControlName="GuestCount"
-                        placeholder="GuestCount" required />
+                    <input id="GuestCount" type="text" class="form-control" formControlName="GuestCount"
+                        placeholder="Enter the GuestCount" required />
                     <span class="text-danger" *ngIf="
                         restaurantbookingFormGroup.controls['GuestCount'].touched &&
                         restaurantbookingFormGroup.hasError('required', 'GuestCount')
@@ -86,7 +96,7 @@
 
                 <div class="form-group">
                     <label for="Price">Price:</label>
-                    <input id="Price" class="form-control" formControlName="Price" placeholder="Price (required)" />
+                    <input id="Price" class="form-control" formControlName="Price" placeholder="Your Price" />
                     <span class="text-danger" *ngIf="
                     restaurantbookingFormGroup.controls['Price'].touched &&
                     restaurantbookingFormGroup.hasError('required', 'Price')

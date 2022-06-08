@@ -5,13 +5,14 @@
                 <label for="firstName">First Name:</label>
                 <input id="firstName" class="form-control" formControlName="firstName" placeholder="Enter Your First Name"
                     required />
-                    <span
-                    class="text-danger"
-                    *ngIf="
-                    SignFormGroup.controls['firstName'].touched &&
-                    SignFormGroup.hasError('required', 'firstName')
-                    "
+                    <span class="text-danger"
+                    *ngIf="SignFormGroup.controls['firstName'].touched &&
+                    SignFormGroup.hasError('required', 'firstName')"
                     >*First Name is required!!</span>
+                    <span class="text-danger"
+                    *ngIf="SignFormGroup.controls['firstName'].touched &&
+                    SignFormGroup.hasError('pattern', 'firstName')"
+                    >First Name Must Contain Only Alphabets</span>
             </div>
             <div class="form-group">
                 <label for="lastName">Last Name:</label>
@@ -24,6 +25,13 @@
                     SignFormGroup.hasError('required', 'lastName')
                     "
                     >*Last Name is required!!</span>
+                    <span
+                    class="text-danger"
+                    *ngIf="
+                    SignFormGroup.controls['lastName'].touched &&
+                    SignFormGroup.hasError('pattern', 'lastName')
+                    "
+                    >*Last Name Must Contain Only Alphabets</span>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -36,6 +44,13 @@
                     SignFormGroup.hasError('required', 'email')
                     "
                     >*Email is required!!</span>
+                    <span
+                    class="text-danger"
+                    *ngIf="
+                    SignFormGroup.controls['email'].touched &&
+                    SignFormGroup.hasError('pattern', 'email')
+                    "
+                    >Please enter a specific format</span>
             </div>
             <div class="form-group">
                 <label for="Password">Password:</label>

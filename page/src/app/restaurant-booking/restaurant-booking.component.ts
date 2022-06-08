@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class RestaurantBookingComponent  {
   [x: string]: any;
   websiteList: any = ['25','26','27','28','29','30','31','32','33','34','35']
-    
+    confirm:any =[];
     restaurantbookingFormGroup: FormGroup; 
     empRecord: any={
       Name: '',
@@ -42,11 +42,11 @@ export class RestaurantBookingComponent  {
   constructor(private fb: FormBuilder,private api:AppServiceService,private router:Router,private http:HttpClient,private toastr:ToastrService) {
 
     this.restaurantbookingFormGroup = this.fb.group({
-      Name: ['', Validators.required,[Validators.minLength(3)]],
-      aadhar: ['', Validators.required],
+      Name: ['', Validators.required,[Validators.pattern("[a-zA-Z][a-zA-Z ]+")]],
+      aadhar: ['', Validators.required,[Validators.pattern("^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$")]],
       email: ['', [Validators.required, Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
       address: ['', Validators.required],
-      MobileNumber: ['', Validators.required],
+      MobileNumber: ['', [Validators.required,Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]],
       roomtype: ['', Validators.required],
       roomnumber: ['', Validators.required],
       GuestCount: ['', Validators.required],
@@ -100,11 +100,11 @@ export class RestaurantBookingComponent  {
   }
   ngOnInit(): void {
     this.restaurantbookingFormGroup = this.fb.group({
-      fname: ['', Validators.required],
-      aadhar: ['', Validators.required],
+      fname:  ['',[Validators.required,Validators.pattern("[a-zA-Z]*")]],
+      aadhar:  ['',[Validators.required,Validators.pattern("^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$")]],
       email: ['', [Validators.required, Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
       address: ['', Validators.required],
-      MobileNumber: ['', Validators.required],
+      MobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       roomtype: ['', Validators.required],
       roomnumber: ['', Validators.required],
       GuestCount: ['', Validators.required],
@@ -117,19 +117,23 @@ export class RestaurantBookingComponent  {
   }
  
 
-FormSubmit(FormValue:NgForm)
+FormSubmit(FormValue:any)
 {
   console.log(FormValue);
   this.api.resturantbook(FormValue).subscribe((res:any)=>{
     // this.restaurantbookingFormGroup.reset()
       console.log("data get reloaded");
       console.log("Form value add sucessfully");
-      console.log("getted response",res);
+      console.log("get data",this.data)
+      console.log("getted response",res.object);
+    
       if(res && res['id']){  
-      this.toastr.error(res['message']) 
+        localStorage.setItem('bookstatus',JSON.stringify(FormValue));
       this.toastr.success("Booking Successfull");
       this.router.navigate(['Booking'])
       }
+
+     
     },err=>{
       this.toastr.error("Please Register your form");
       console.log(err)

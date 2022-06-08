@@ -40,7 +40,7 @@ export class DatabaseDisplayComponent  {
 //   }
   
   ngOnInit(): void {
-    console.log("database");
+    this.getadmin()
   }
   getadmin(){
     this.api.getadmin().subscribe(data=>{

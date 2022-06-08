@@ -44,11 +44,11 @@ export class SignUpComponent  {
     }
     ngOnInit(): void {
       this.SignFormGroup = this.fb.group({
-        firstName: ['', Validators.required,[Validators.minLength(3)]],
-        lastName: ['', Validators.required],
+        firstName:['',[Validators.required,Validators.pattern("[a-zA-Z]*")]],
+        lastName: ['',[Validators.required,Validators.pattern("[a-zA-Z]*")]],
         email: ['', [Validators.required, Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
-        Password: ['', Validators.required],
-        reenter: ['', Validators.required],
+        Password: ['', [Validators.required, Validators.pattern("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]],
+        reenter: ['', [Validators.required,Validators.pattern("{{ password.value }}")]],
         type:['user']
         });
     }
