@@ -88,7 +88,7 @@ export class SignUpComponent  {
     this.AppService.signupform(FormValue).subscribe((res)=>{
       console.log("Form value add sucessfully");
       console.log("getted response",res);
-      if (res && res['name'] && res['name'] !== "Error")
+      if (res && res['id'])
       {
         this.toastr.success("Signup Successfull");
         this.router.navigate(['client-login'])

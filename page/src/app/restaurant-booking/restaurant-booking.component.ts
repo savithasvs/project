@@ -123,13 +123,12 @@ FormSubmit(FormValue:NgForm)
   this.api.resturantbook(FormValue).subscribe((res:any)=>{
     // this.restaurantbookingFormGroup.reset()
       console.log("data get reloaded");
-      // window.location.reload();
       console.log("Form value add sucessfully");
       console.log("getted response",res);
-      if (res && res['name'] && res['name'] !== "Error"){
-      // if(res['name'] === 'Error'){  
+      if(res && res['id']){  
       this.toastr.error(res['message']) 
       this.toastr.success("Booking Successfull");
+      this.router.navigate(['Booking'])
       }
     },err=>{
       this.toastr.error("Please Register your form");
@@ -140,7 +139,7 @@ FormSubmit(FormValue:NgForm)
   getvalue(event:any) {
   console.log("value change",event.target.value)
   let arr = event.target.value;
-  this.api.getvalue("3d3a0153d795fa6b6ace65b522bc90ad").subscribe((res:any)=>{
+  this.api.getvalue("ca850d08d870ce8fe58a99188a446b9a").subscribe((res:any)=>{
     console.log("value getted",res)
     let i=0;
     for(let value in res){

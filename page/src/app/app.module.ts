@@ -25,6 +25,7 @@ import {HttpCallInterceptor} from './interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { BookingComponent } from './booking/booking.component';
 
 const routes: Routes = [
   
@@ -45,6 +46,7 @@ const routes: Routes = [
   {path:'cloud-kitchen',component:CloudKitchenComponent},
   {path:'dine-in',component:DineInComponent},
   {path:'dashboard',component:DashboardComponent},
+  {path:'Booking',component:BookingComponent},
 
 ];
 @NgModule({
@@ -66,6 +68,7 @@ const routes: Routes = [
     DineInComponent,
     DashboardComponent,
     DashboardfrontComponent,
+    BookingComponent,
   ],
   imports: [
     BrowserModule,

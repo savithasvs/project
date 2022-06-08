@@ -41,10 +41,10 @@
     grid-template-columns: auto auto;
 }
 .panel-body{
-    background-image: linear-gradient(lightgreen,rgb(224, 105, 189));
+    background-image: linear-gradient(rgba(8, 9, 8, 0.533),rgba(36, 110, 142, 0.533));
     margin-top:40px;
     margin-left:970px;
-    border: 2px solid rgb(245, 244, 244);
+    border: 2px solid rgba(12, 11, 11, 0.574);
     width: 380px;
     height: 400px;
     box-shadow: 2px;
@@ -66,7 +66,7 @@ input {
 .login {
     margin-left: 140px;
     margin-top: 45px;
-  background-image: linear-gradient(rgb(114, 168, 106), rgb(165, 53, 131));
+  background-image: linear-gradient(rgba(24, 25, 24, 0), rgb(29, 22, 27));
   border: none;
   color: white;
   padding: 15px 32px;
@@ -116,7 +116,7 @@ h2{
 }
 .bg-img {
     /* The image used */
-    background-image: url("../../assets/foodgroups.jpg");
+    background-image: url("../../assets/cloud4.jpg");
     /* Control the height of the image */
     min-height: 590px;
     /* Center and scale the image nicely */
