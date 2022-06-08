@@ -17,6 +17,8 @@ const dbconnection = require("./dbconnect");
 const logger = require("./logger");
 const setmail = require('./email');
 const res = require("express/lib/response");
+const validation = require('./validator/restaurant.schema')
+const signvalidation = require('./validator/signup.schema')
 app.use(connection.static("public"));
 app.use(bodyparser.json());
 app.use(
@@ -78,6 +80,13 @@ app.post("/sign-up", (request, response ) => {
     reenter: request.body.reenter,
     type:"user"
   };
+const value = signvalidation.signupSchema.validate(request.body);
+if (value.error) {
+  response.json({
+    success: 0,
+    message: value.error.details[0].message,
+  });
+} else{
   dbconnection.cloudant.use("new_sample").insert(object).then((data) => {
     response.send(data) 
             console.log("Data Inserted into Cloud"+data);
@@ -85,7 +94,8 @@ app.post("/sign-up", (request, response ) => {
           response.send(err) 
             console.log(err);
     });
-  });
+  }
+});
   /////////////// restaurant booking
  
   app.get("/getadmin", (request, response) => {
@@ -130,27 +140,35 @@ app.post("/resturantbook", (request, response ) => {
     roomtype: request.body.roomtype,
     roomnumber: request.body.roomnumber,
     Price: request.body.Price,
-    // user: request.body.user,
+    user: request.body.user,
     type:"rest"
 };
+const value = validation.restSchema.validate(request.body);
+if (value.error) {
+  response.json({
+    success: 0,
+    message: value.error.details[0].message,
+  });
+} else { 
+  dbconnection.adminin.insert(objects).then((data) => {
+    console.log("Data Inserted into Cloud" + data);
+    var datas = request.body.email
+  setmail.mail(datas,"Booking for you").then((data)=>{
+      console.log("Mail Successfully sent",data);
+        }).catch((err)=>{
+      console.log("Mail Not sent successfully",err);
+      console.log(objects);
+      })
+      response.send(data)
+  }).catch((err) =>{
+      response.send(err)
+      console.log(err);
+    logger.error("logger working succesfully")
+  });
+  console.log("Data added");
+  logger.info("Data added Successfully")
+}
 
-dbconnection.adminin.insert(objects).then((data) => {
-  console.log("Data Inserted into Cloud" + data);
-  var datas = request.body.email
-setmail.mail(datas,"Booking for you").then((data)=>{
-    console.log("Mail Successfully sent",data);
-      }).catch((err)=>{
-    console.log("Mail Not sent successfully",err);
-    console.log(objects);
-    })
-    response.send(data)
-}).catch((err) =>{
-    response.send(err)
-    console.log(err);
-  logger.error("logger working succesfully")
-});
-console.log("Data added");
-logger.info("Data added Successfully")
 // });
 
    });
