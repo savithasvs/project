@@ -39,9 +39,9 @@ app.get("/userbook",(_request, _response ) => {
   app.delete("/delete/:id/:id1", (request,response) => {
     dbconnection
       .del_id(request.params.id, request.params.id1, "new_sample")
-      .then((_res) => {
-        if (_res) {
-          response.send(_res);
+      .then((res1) => {
+        if (res1) {
+          response.send(res1);
         } else {
           response.send("error");
         }
@@ -109,9 +109,9 @@ if (value.error) {
   });
   //
   app.get("/getadminId/:id", (request, response) => {
-    dbconnection.getId(request.params.id, "new_sample").then((_res) => {
-      if (_res) {
-        response.send(_res);
+    dbconnection.getId(request.params.id, "new_sample").then((res2) => {
+      if (res2) {
+        response.send(res2);
       } else {
         response.send("error");
       }
@@ -175,10 +175,10 @@ app.get("/get_query/:id", (request, response) => {
 ///////relationship
 app.get("/getvalue/:id", (request,response) => {
   console.log("getvalue id",request.params.id);
-  dbconnection.adminin.find(request.params.id).then((_res) => {
-  if (_res) {
- console.log(_res);
-  response.json(_res);
+  dbconnection.adminin.find(request.params.id).then((res3) => {
+  if (res3) {
+ console.log(res3);
+  response.json(res3);
   } else {
   response.send("error");
   }
@@ -194,10 +194,10 @@ app.get("/get_all_query/:id", (request, response) => {
        "id": request.params.id
     }
  }
-  dbconnection.adminin.find(fetchdata).then((_res) => {
-  if (_res) {
- console.log(_res);
-  response.json(_res);
+  dbconnection.adminin.find(fetchdata).then((res4) => {
+  if (res4) {
+ console.log(res4);
+  response.json(res4);
   } else {
   response.send("error");
   }
