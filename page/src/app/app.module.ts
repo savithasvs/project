@@ -29,6 +29,7 @@ import { NavheaderComponent } from './navheader/navheader.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { AdminnavComponent } from './adminnav/adminnav.component';
 
 const routes: Routes = [
   
@@ -80,6 +81,7 @@ const routes: Routes = [
     LogoutComponent,
     AboutComponent,
     ContactComponent,
+    AdminnavComponent,
   ],
   imports: [
     BrowserModule,
