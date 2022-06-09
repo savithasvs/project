@@ -28,7 +28,7 @@ app.use(
 );
 
 
-app.get("/userbook",(request, response ) => {
+app.get("/userbook",(_request, _response ) => {
   console.log("data getted",request.params.data)
     slector.get11(request.params.data).then((data) =>{
       console.log('Data getted');
@@ -37,10 +37,10 @@ app.get("/userbook",(request, response ) => {
     )
 })
   ////// delete
-  app.delete("/delete/:id/:id1", (request, response) => {
+  app.delete("/delete/:id/:id1", (__request, __response) => {
     dbconnection
       .del_id(request.params.id, request.params.id1, "new_sample")
-      .then((res) => {
+      .then((_res) => {
         if (res) {
           response.send(res);
         } else {
@@ -50,7 +50,7 @@ app.get("/userbook",(request, response ) => {
   });
 
 /////room Number
-app.get("/roomnumber/:data",(request, response) => {
+app.get("/roomnumber/:data",(___request, ___response) => {
   console.log("data found")
   console.log("data getted",request.params.data)
     roomvalue.room(request.params.data).then((data)=>{
@@ -61,7 +61,7 @@ app.get("/roomnumber/:data",(request, response) => {
 })
 
 ////client get
- app.get("/Client/:data",(request, response) => {
+ app.get("/Client/:data",(____request, ____response) => {
    console.log("data getted",request.params.data)
      logindetail.getval(request.params.data).then((data) =>{
        console.log('Data getted');
@@ -70,7 +70,7 @@ app.get("/roomnumber/:data",(request, response) => {
      )
  })
  ///sign-up post
-app.post("/sign-up", (request, response ) => {
+app.post("/sign-up", (_____request, _____response ) => {
   console.log(request);
   var object = {
     firstName: request.body.firstName,
@@ -98,9 +98,9 @@ if (value.error) {
 });
   /////////////// restaurant booking
  
-  app.get("/getadmin", (request, response) => {
+  app.get("/getadmin", (______request, ______response) => {
     console.log(request);
-    dbconnection.get("new_sample").then((res) => {
+    dbconnection.get("new_sample").then((__res) => {
       if (res) {
         response.send(res);
       } else {
@@ -109,8 +109,8 @@ if (value.error) {
     });
   });
   //
-  app.get("/getadminId/:id", (request, response) => {
-    dbconnection.getId(request.params.id, "new_sample").then((res) => {
+  app.get("/getadminId/:id", (_______request, _______response) => {
+    dbconnection.getId(request.params.id, "new_sample").then((___res) => {
       if (res) {
         response.send(res);
       } else {
@@ -128,7 +128,7 @@ if (value.error) {
   //   });
   // });
 // });
-app.post("/resturantbook", (request, response ) => {
+app.post("/resturantbook", (________request, ________response ) => {
   console.log(request);
   var objects = {
     Name: request.body.fname,
@@ -153,7 +153,7 @@ if (value.error) {
   dbconnection.adminin.insert(objects).then((data) => {
     console.log("Data Inserted into Cloud" + data);
     var datas = request.body.email
-  setmail.mail(datas,"Booking for you").then((data)=>{
+  setmail.mail(datas,"Booking for you").then((_data)=>{
       console.log("Mail Successfully sent",data);
         }).catch((err)=>{
       console.log("Mail Not sent successfully",err);
@@ -173,33 +173,16 @@ if (value.error) {
 
    });
 ///////////
-app.post("/productbook", (request, response ) => {
-  console.log(request);
-  var objectp = {
-    Name: request.body.Name,
-    roomtype:request.body.roomtype,
-    roomnumber: request.body.roomnumber,
-    Food:request.body.Food,
-    Price:request.body.Price
-};
-dbconnection.adminin.insert(objectp).then((data) => {
-  response.send(data)
-            console.log("Data Inserted into Cloud" + data);
-        }).catch((err) =>{
-            console.log(err);
-    });
-  console.log("Data added");
-});
-////////
+
 ///roomtype
-app.get("/get_query/:id", (request, response) => {
+app.get("/get_query/:id", (_________request, __________response) => {
   console.log("get id",request.params.id);
   var fetchdata ={
     "selector": {
        "id": request.body.roomtype
     }
  }
-  dbconnection.adminin.get(request.params.id).then((res) => {
+  dbconnection.adminin.get(request.params.id).then((____res) => {
   if (res) {
  console.log(res);
   response.json(res);
@@ -210,14 +193,14 @@ app.get("/get_query/:id", (request, response) => {
   console.log("end");
  });
 ///////relationship
-app.get("/getvalue/:id", (request, response) => {
+app.get("/getvalue/:id", (___________request, ___________response) => {
   console.log("getvalue id",request.params.id);
   var fetchdata ={
     "selector": {
        "email": request.params.id
     }
  }
-  dbconnection.adminin.find(request.params.id).then((res) => {
+  dbconnection.adminin.find(request.params.id).then((_____res) => {
   if (res) {
  console.log(res);
   response.json(res);
@@ -229,14 +212,14 @@ app.get("/getvalue/:id", (request, response) => {
  });
 
 //////admin login
-app.get("/get_all_query/:id", (request, response) => {
+app.get("/get_all_query/:id", (___________request, __________response) => {
   console.log("get id",request.params.id);
   var fetchdata ={
     "selector": {
        "id": request.params.id
     }
  }
-  dbconnection.adminin.find(fetchdata).then((res) => {
+  dbconnection.adminin.find(fetchdata).then((______res) => {
   if (res) {
  console.log(res);
   response.json(res);
