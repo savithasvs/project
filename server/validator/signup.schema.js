@@ -13,11 +13,11 @@ const signupSchema = Joi.object({
     .required(),
     Password: Joi.string()
     .min(3)
-    .regex(/"(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/)
     .required(),
     reenter: Joi.string()
     .min(3)
-    .regex(/{{ password.value }}/)
     .required(),
+    type: Joi.string()
+    .required()
 })
 module.exports = {signupSchema};
