@@ -1,6 +1,6 @@
 const database = require('./dbconnect');
 let get11 = async (_getobjects)=>{
-    var objecta = {
+    let objecta = {
         selector:{
             "type":"rest"
         }

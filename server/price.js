@@ -1,5 +1,5 @@
 let getval = async (getobject)=>{
-    var object = {
+    let object = {
         selector:{
             "email":getobject
         }

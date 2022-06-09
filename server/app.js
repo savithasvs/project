@@ -40,8 +40,8 @@ app.get("/userbook",(_request, _response ) => {
     dbconnection
       .del_id(request.params.id, request.params.id1, "new_sample")
       .then((_res) => {
-        if (res) {
-          response.send(res);
+        if (_res) {
+          response.send(_res);
         } else {
           response.send("error");
         }
@@ -99,9 +99,9 @@ if (value.error) {
  
   app.get("/getadmin", (request,response) => {
     console.log(request);
-    dbconnection.get("new_sample").then((res) => {
-      if (res) {
-        response.send(res);
+    dbconnection.get("new_sample").then((_res) => {
+      if (_res) {
+        response.send(_res);
       } else {
         response.send("error");
       }
@@ -109,9 +109,9 @@ if (value.error) {
   });
   //
   app.get("/getadminId/:id", (request, response) => {
-    dbconnection.getId(request.params.id, "new_sample").then((res) => {
-      if (res) {
-        response.send(res);
+    dbconnection.getId(request.params.id, "new_sample").then((_res) => {
+      if (_res) {
+        response.send(_res);
       } else {
         response.send("error");
       }
@@ -162,10 +162,10 @@ if (value.error) {
 ///roomtype
 app.get("/get_query/:id", (request, response) => {
   console.log("get id",request.params.id);
-  dbconnection.adminin.get(request.params.id).then((res) => {
-  if (res) {
- console.log(res);
-  response.json(res);
+  dbconnection.adminin.get(request.params.id).then((_res) => {
+  if (_res) {
+ console.log(_res);
+  response.json(_res);
   } else {
   response.send("error");
   }
@@ -175,10 +175,10 @@ app.get("/get_query/:id", (request, response) => {
 ///////relationship
 app.get("/getvalue/:id", (request,response) => {
   console.log("getvalue id",request.params.id);
-  dbconnection.adminin.find(request.params.id).then((res) => {
-  if (res) {
- console.log(res);
-  response.json(res);
+  dbconnection.adminin.find(request.params.id).then((_res) => {
+  if (_res) {
+ console.log(_res);
+  response.json(_res);
   } else {
   response.send("error");
   }
@@ -195,9 +195,9 @@ app.get("/get_all_query/:id", (request, response) => {
     }
  }
   dbconnection.adminin.find(fetchdata).then((_res) => {
-  if (res) {
- console.log(res);
-  response.json(res);
+  if (_res) {
+ console.log(_res);
+  response.json(_res);
   } else {
   response.send("error");
   }

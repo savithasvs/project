@@ -1,6 +1,6 @@
 const database = require('./dbconnect');
 let room = async (getobject)=>{
-    var objectr = {
+    let objectr = {
         selector:{
             "roomnumber":getobject,
         }
