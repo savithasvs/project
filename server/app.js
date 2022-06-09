@@ -6,9 +6,8 @@ app.use(express.static("public"));
 const port = 8000;
 let login = {};
 const file = require("fs");
-const { request } = require("http");
-const { response } = require("express");
-const { nextTick, uptime, getMaxListeners } = require("process");
+
+
 const cors = require("cors");
 const logindetail = require('./serves/signup');
 const slector = require('./user')
@@ -37,7 +36,7 @@ app.get("/userbook",(_request, _response ) => {
     )
 })
   ////// delete
-  app.delete("/delete/:id/:id1", (__request, __response) => {
+  app.delete("/delete/:id/:id1", (request,response) => {
     dbconnection
       .del_id(request.params.id, request.params.id1, "new_sample")
       .then((_res) => {
@@ -50,7 +49,7 @@ app.get("/userbook",(_request, _response ) => {
   });
 
 /////room Number
-app.get("/roomnumber/:data",(___request, ___response) => {
+app.get("/roomnumber/:data",(request,response) => {
   console.log("data found")
   console.log("data getted",request.params.data)
     roomvalue.room(request.params.data).then((data)=>{
@@ -61,7 +60,7 @@ app.get("/roomnumber/:data",(___request, ___response) => {
 })
 
 ////client get
- app.get("/Client/:data",(____request, ____response) => {
+ app.get("/Client/:data",(request,response) => {
    console.log("data getted",request.params.data)
      logindetail.getval(request.params.data).then((data) =>{
        console.log('Data getted');
@@ -70,9 +69,9 @@ app.get("/roomnumber/:data",(___request, ___response) => {
      )
  })
  ///sign-up post
-app.post("/sign-up", (_____request, _____response ) => {
+app.post("/sign-up", (request, response ) => {
   console.log(request);
-  var object = {
+  let object = {
     firstName: request.body.firstName,
     lastName: request.body.lastName,
     email: request.body.email,
@@ -98,9 +97,9 @@ if (value.error) {
 });
   /////////////// restaurant booking
  
-  app.get("/getadmin", (______request, ______response) => {
+  app.get("/getadmin", (request,response) => {
     console.log(request);
-    dbconnection.get("new_sample").then((__res) => {
+    dbconnection.get("new_sample").then((res) => {
       if (res) {
         response.send(res);
       } else {
@@ -109,8 +108,8 @@ if (value.error) {
     });
   });
   //
-  app.get("/getadminId/:id", (_______request, _______response) => {
-    dbconnection.getId(request.params.id, "new_sample").then((___res) => {
+  app.get("/getadminId/:id", (request, response) => {
+    dbconnection.getId(request.params.id, "new_sample").then((res) => {
       if (res) {
         response.send(res);
       } else {
@@ -118,19 +117,10 @@ if (value.error) {
       }
     });
   });
-  // app.get("/getadminId/:id", (request, response) => {
-  //   dbconnection.getId(request.params.id, "new_sample").then((res) => {
-  //     if (res) {
-  //       response.send(res);
-  //     } else {
-  //       response.send("error");
-  //     }
-  //   });
-  // });
-// });
-app.post("/resturantbook", (________request, ________response ) => {
+
+app.post("/resturantbook", (request,response ) => {
   console.log(request);
-  var objects = {
+  let objects = {
     Name: request.body.fname,
     aadhar:request.body.aadhar,
     email: request.body.email,
@@ -152,13 +142,8 @@ if (value.error) {
 } else { 
   dbconnection.adminin.insert(objects).then((data) => {
     console.log("Data Inserted into Cloud" + data);
-    var datas = request.body.email
-  setmail.mail(datas,"Booking for you").then((_data)=>{
-      console.log("Mail Successfully sent",data);
-        }).catch((err)=>{
-      console.log("Mail Not sent successfully",err);
-      console.log(objects);
-      })
+    
+  
       response.send(data)
   }).catch((err) =>{
       response.send(err)
@@ -175,14 +160,9 @@ if (value.error) {
 ///////////
 
 ///roomtype
-app.get("/get_query/:id", (_________request, __________response) => {
+app.get("/get_query/:id", (request, response) => {
   console.log("get id",request.params.id);
-  var fetchdata ={
-    "selector": {
-       "id": request.body.roomtype
-    }
- }
-  dbconnection.adminin.get(request.params.id).then((____res) => {
+  dbconnection.adminin.get(request.params.id).then((res) => {
   if (res) {
  console.log(res);
   response.json(res);
@@ -193,14 +173,9 @@ app.get("/get_query/:id", (_________request, __________response) => {
   console.log("end");
  });
 ///////relationship
-app.get("/getvalue/:id", (___________request, ___________response) => {
+app.get("/getvalue/:id", (request,response) => {
   console.log("getvalue id",request.params.id);
-  var fetchdata ={
-    "selector": {
-       "email": request.params.id
-    }
- }
-  dbconnection.adminin.find(request.params.id).then((_____res) => {
+  dbconnection.adminin.find(request.params.id).then((res) => {
   if (res) {
  console.log(res);
   response.json(res);
@@ -212,14 +187,14 @@ app.get("/getvalue/:id", (___________request, ___________response) => {
  });
 
 //////admin login
-app.get("/get_all_query/:id", (___________request, __________response) => {
+app.get("/get_all_query/:id", (request, response) => {
   console.log("get id",request.params.id);
-  var fetchdata ={
+  let fetchdata ={
     "selector": {
        "id": request.params.id
     }
  }
-  dbconnection.adminin.find(fetchdata).then((______res) => {
+  dbconnection.adminin.find(fetchdata).then((_res) => {
   if (res) {
  console.log(res);
   response.json(res);
