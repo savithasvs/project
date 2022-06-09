@@ -9,7 +9,7 @@
   display: inline-block;
   font-size: 1.7rem;
   font-weight: 600;
-  margin-left: 380px;
+  margin-left: 200px;
   margin-top: -1.2rem;
   padding:.8rem 3rem;
 }
@@ -33,6 +33,23 @@
 }
 
 .btn1:hover{
+  background-color: rgba(0, 0, 255, 0.398);
+}
+.btn2{
+  background: linear-gradient(90deg, rgb(146, 61, 125) 0%, rgb(245, 4, 4) 100%);
+  border-radius: .5rem;
+  color:#fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-left: 160px;
+  margin-top: 2rem;
+  padding:.8rem 3rem;
+  border: none;
+}
+
+.btn2:hover{
   background-color: rgba(0, 0, 255, 0.398);
 }
 

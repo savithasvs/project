@@ -47,8 +47,8 @@ export class SignUpComponent  {
         firstName:['',[Validators.required,Validators.pattern("[a-zA-Z]*")]],
         lastName: ['',[Validators.required,Validators.pattern("[a-zA-Z]*")]],
         email: ['', [Validators.required, Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
-        Password: ['', [Validators.required, Validators.pattern("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]],
-        reenter: ['', [Validators.required,Validators.pattern("{{ password.value }}")]],
+        Password: ['', [Validators.required, Validators.pattern("[A-Za-z0-9]*")]],
+        reenter: ['', [Validators.required,Validators.pattern("[A-Za-z0-9]*")]],
         type:['user']
         });
     }

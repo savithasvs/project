@@ -143,7 +143,7 @@ FormSubmit(FormValue:any)
   getvalue(event:any) {
   console.log("value change",event.target.value)
   let arr = event.target.value;
-  this.api.getvalue("ca850d08d870ce8fe58a99188a446b9a").subscribe((res:any)=>{
+  this.api.getvalue("d593a92581e1728c108945e6051d70ae").subscribe((res:any)=>{
     console.log("value getted",res)
     let i=0;
     for(let value in res){

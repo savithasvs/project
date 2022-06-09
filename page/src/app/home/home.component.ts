@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit {
     change(){
       this.router.navigate(['client-login']);
       }
+      rest(){
+        this.router.navigate(['adminlogin']);
+        }
 
   ngOnInit(): void {
     console.log("home");

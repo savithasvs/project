@@ -14,7 +14,6 @@ import { HomeComponent } from './home/home.component';
 import { DatabaseDisplayComponent } from './database-display/database-display.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { RestaurantBookingComponent } from './restaurant-booking/restaurant-booking.component';
-import { ProductBookingComponent } from './product-booking/product-booking.component';
 import { BarComponent } from './bar/bar.component';
 import { CafeComponent } from './cafe/cafe.component';
 import { CloudKitchenComponent } from './cloud-kitchen/cloud-kitchen.component';
@@ -26,6 +25,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { BookingComponent } from './booking/booking.component';
+import { NavheaderComponent } from './navheader/navheader.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   
@@ -38,7 +41,6 @@ const routes: Routes = [
   {path:'database-display',component:DatabaseDisplayComponent},
   {path:'adminlogin',component:AdminloginComponent},
   {path:'restaurant-booking',component:RestaurantBookingComponent},
-  {path:'product-booking',component:ProductBookingComponent},
   {path:'bar',component:BarComponent},
   {path:'database-display',component:DatabaseDisplayComponent},
   {path:'dashboardfront',component:DashboardfrontComponent},
@@ -47,7 +49,13 @@ const routes: Routes = [
   {path:'dine-in',component:DineInComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'Booking',component:BookingComponent},
+  {path:'logout',component:LogoutComponent},
+  {path:'about',component:AboutComponent},
+  {path:'contact',component:ContactComponent},
+  
 
+  
+   
 ];
 @NgModule({
   declarations: [
@@ -61,7 +69,6 @@ const routes: Routes = [
     DatabaseDisplayComponent,
     AdminloginComponent,
     RestaurantBookingComponent,
-    ProductBookingComponent,
     BarComponent,
     CafeComponent,
     CloudKitchenComponent,
@@ -69,6 +76,10 @@ const routes: Routes = [
     DashboardComponent,
     DashboardfrontComponent,
     BookingComponent,
+    NavheaderComponent,
+    LogoutComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

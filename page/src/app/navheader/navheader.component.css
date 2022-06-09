@@ -7,19 +7,19 @@
     box-sizing: border-box;
     border-radius: 25px;
 } 
-.page{
+.restaurant-types{
     padding-left: 40px;
-    margin-left: 450px;
+    margin-left: 440px;
 }
-.sign-up ,
-.about-us,
-.Contact-us{
-    /* padding-left: 60px; */
+/* .restaurant-types ,
+.restaurant-booking,
+.Logout{
+    
     margin-left: 20px;
-}
-.sign-up:hover,
-.about-us:hover,
-.Contact-us:hover{
+} */
+.restaurant-types:hover,
+.restaurant-booking:hover,
+.Logout:hover{
     display: inline;
     font-weight: bolder;
      padding-left: 35px;
