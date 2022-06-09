@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppServiceService } from '../app-service.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -163,7 +163,6 @@ roomvalue(event:any) {
     this.findroom.push(res.docs);
     console.log(this.findroom);
     if(res.docs.length >0 ){
-      // alert("Not able to choose this room already bookd");
       this.toastr.success("Not able to choose this room already bookd");
     }
   
