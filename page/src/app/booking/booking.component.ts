@@ -11,7 +11,6 @@ export class BookingComponent implements OnInit {
   Email:any;
   RoomNumber:any;
   Roomtype:any;
-  constructor() { }
 
   ngOnInit(): void {
    this.confirmation = localStorage.getItem('bookstatus');

@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators,NgForm } from '@angular/forms';
 import { AppServiceService } from '../app-service.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './client-login.component.html',
   styleUrls: ['./client-login.component.css']
 })
-export class ClientLoginComponent implements OnInit {
+export class ClientLoginComponent {
   clientFormGroup: FormGroup
  
     AppService: any;
@@ -22,9 +22,7 @@ export class ClientLoginComponent implements OnInit {
       pass: ['',[Validators.required]],
     });
    }
-  ngOnInit(): void {
-    console.log("client-login");
-  }
+
   get email() {
     return this.clientFormGroup.get('email')!;
   }
