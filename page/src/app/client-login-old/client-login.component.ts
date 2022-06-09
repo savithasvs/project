@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   templateUrl: './client-login.component.html',
   styleUrls: ['./client-login.component.css']
 })
-export class ClientLoginComponent implements OnInit {
+export class ClientLoginComponent  {
   clientFormGroup: FormGroup
   empRecord: any={
     firstName: '',
@@ -20,8 +20,7 @@ export class ClientLoginComponent implements OnInit {
     });
    }
 
-  ngOnInit(): void {
-  }
+  
   get firstName() {
     return this.clientFormGroup.get('firstName')!;
   }
