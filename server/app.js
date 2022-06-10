@@ -26,15 +26,6 @@ app.use(
   })
 );
 
-
-app.get("/userbook",(_request, _response ) => {
-  console.log("data getted",request.params.data)
-    slector.get11(request.params.data).then((data) =>{
-      console.log('Data getted');
-      response.json(data);
-    }
-    )
-})
   ////// delete
   app.delete("/delete/:id/:id1", (request,response) => {
     dbconnection
@@ -49,7 +40,7 @@ app.get("/userbook",(_request, _response ) => {
   });
 
 /////room Number
-app.get("/roomnumber/:data",(request,response) => {
+app.get("/roomNumber/:data",(request,response) => {
   console.log("data found")
   console.log("data getted",request.params.data)
     roomvalue.room(request.params.data).then((data)=>{
@@ -69,7 +60,7 @@ app.get("/roomnumber/:data",(request,response) => {
      )
  })
  ///sign-up post
-app.post("/sign-up", (request, response ) => {
+app.post("/signUp", (request, response ) => {
   console.log(request);
   let object = {
     firstName: request.body.firstName,
@@ -108,7 +99,7 @@ if (value.error) {
     });
   });
   //
-  app.get("/getadminId/:id", (request, response) => {
+  app.get("/getAdminId/:id", (request, response) => {
     dbconnection.getId(request.params.id, "new_sample").then((res2) => {
       if (res2) {
         response.send(res2);
@@ -118,7 +109,7 @@ if (value.error) {
     });
   });
 
-app.post("/resturantbook", (request,response ) => {
+app.post("/resturantBook", (request,response ) => {
   console.log(request);
   let objects = {
     Name: request.body.fname,
@@ -160,7 +151,7 @@ if (value.error) {
 ///////////
 
 ///roomtype
-app.get("/get_query/:id", (request, response) => {
+app.get("/getQuery/:id", (request, response) => {
   console.log("get id",request.params.id);
   dbconnection.adminin.get(request.params.id).then((_res) => {
   if (_res) {
@@ -205,7 +196,7 @@ app.get("/get_all_query/:id", (request, response) => {
   console.log("end");
  });
 app.listen(port, (err) => {
-//////////// post restaurantbook
+///post restaurantbook 
   if (err) {
     return console.log("something bad happened", err);
   }
