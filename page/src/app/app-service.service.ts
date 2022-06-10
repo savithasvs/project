@@ -16,16 +16,16 @@ export class AppServiceService {
 {
   return this.http.get<any>('http://localhost:8000/client/'+clientobject);
 }
-signupform(signupobject:any)
+signForm(signupobject:any)
 {
-  return this.http.post<any>('http://localhost:8000/sign-up',signupobject);
+  return this.http.post<any>('http://localhost:8000/signUp',signupobject);
 }
 getdata(id: any) {
   return this.http.get(`http://localhost:8000/get_all_query/${id}`);
 }
-resturantbook(resturantbookobject: any)
+resturantBook(resturantbookobject: any)
  {
-  return this.http.post<any>('http://localhost:8000/resturantbook', resturantbookobject );
+  return this.http.post<any>('http://localhost:8000/resturantBook', resturantbookobject );
 }
 getadmin()
 {
@@ -33,22 +33,19 @@ getadmin()
 }
 getadminId(id:any)
 {
-  return this.http.get<any>(`http://localhost:8000/getadminId/${id}`);
+  return this.http.get<any>(`http://localhost:8000/getAdminId/${id}`);
 }
 productbook(productbookobject: any)
  {
   return this.http.post<any>('http://localhost:8000/productbook', productbookobject );
 }
-userbook(objectu: any)
- {
-  return this.http.post<any>('http://localhost:8000/userbook', objectu );
+
+getValue(id: any) {
+  return this.http.get(`http://localhost:8000/getQuery/${id}`);
 }
-getvalue(id: any) {
-  return this.http.get(`http://localhost:8000/get_query/${id}`);
-}
-Roomnum(roomobject:any)
+roomNum(roomobject:any)
 {
-  return this.http.get<any>('http://localhost:8000/roomnumber/'+roomobject);
+  return this.http.get<any>('http://localhost:8000/roomNumber/'+roomobject);
 }
 remove(id: any, id1: any) {
    return this.http.delete(`http://localhost:8000/delete/${id}/${id1}`);

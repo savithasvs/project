@@ -1,16 +1,7 @@
-/* body {
-    background-color: #f5f7fa;
-  }
-.container{
-    margin-right: 2500px;
-}   */
-/* styles reset */
+
 .card {
   border:0;
 }
-
-
-/* card group aka PRIMARY */
 .card-group .card-primary:hover {
   box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.15);
   z-index: 100;
@@ -47,10 +38,6 @@
   background: transparent;
   border:0;
 }
-
-
-/* card deck aka SECONDARY */
-
 .card-deck .card-secondary {
   padding: 32px 32px 0;
   margin: 16px;
@@ -91,9 +78,6 @@
 .card-deck .card-secondary .card-footer .btn{
   margin-right: -24px;
 }
-
-
-/* card AWARDS */
 .awards-container {
   background-image: linear-gradient(to bottom, #0c053e 2%, #261c6a);
   margin: 0 -30px;
@@ -143,8 +127,6 @@
   color: #fff;
   visibility: hidden;
 }
-
-/* cards as ACCORDION */
 .accordion-container{
   margin: 50px 0;
 }
@@ -202,8 +184,6 @@
   box-shadow: 0 12px 15px -4px rgba(12, 5, 62, 0.12);
   border: solid 1.2px #d4d2e6;
   border-radius: 24px;
-  /* -webkit-transition: background .3s;
-  transition: background .3s; */
 }
 .accordion .icon-btn:hover {
   background: #4e22d0 url('https://web-static.ff.int.avast.com/static3.avast.com/1/web/i/v2/components/plus-s-white.png') no-repeat 50% 50%;
@@ -216,9 +196,6 @@
 .accordion .card-body {
   padding: 0 32px 40px;
 }
-
-
-/* PAGE LAYOUT */
 main{
   padding:0 20px;
   max-width:1361px;

@@ -51,7 +51,7 @@ export class ClientLoginComponent {
 }
 
 
-  FormSubmit(FormValue:NgForm)
+  formSubmit(FormValue:NgForm)
   {
     console.log(FormValue);
     this.AppService.Client(FormValue).subscribe((res: any)=>{

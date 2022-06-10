@@ -52,40 +52,20 @@ export class SignUpComponent  {
         type:['user']
         });
     }
-    find(search:any)
-  { 
-    this.AppService.Client(search.email).subscribe((data:any)=>{
-        console.log("data returned from server",data);
-        let totlen = data.docs.length;
-       console.log(data.docs[0].email);
-        this.array.push(data.docs);
-        for(let i=0; i<=totlen; i++)
-        {
-          console.log(data.docs[i].email);
-          let checkmail = data.doc[i].email;
-          // if(data.docs.email == search.email )
-          if(checkmail == search.email){
-            this.toastr.success("Data verified");
-          
-          }
-        }  
-    })
-  }
-
     emailvalidation(event:any){
       console.log("event started");
       console.log(event.target.value);
      this.AppService.Client(event.target.value).subscribe((data:any)=>{
        console.log("Email verification data from database",data);
        if(data.docs[0].email == event.target.value) {
-          this.toastr.success("Email Already exit enter a vaild email")
+          this.toastr.error("Email Already exit enter a vaild email")
        }
      })
    }
-  FormSubmit(FormValue:NgForm)
+  formSubmit(FormValue:NgForm)
   {
     console.log(FormValue);
-    this.AppService.signupform(FormValue).subscribe((res)=>{
+    this.AppService.signForm(FormValue).subscribe((res)=>{
       console.log("Form value add sucessfully");
       console.log("getted response",res);
       if (res && res['id'])
